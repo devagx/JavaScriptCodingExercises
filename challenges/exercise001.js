@@ -30,6 +30,12 @@ function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
   // Add your code here!
+  var reductionAmount = (Number(originalPrice) * Number(reduction)/100).toFixed(2);
+
+  console.log("reductionAmount = " + reductionAmount )
+  var newAmount = Number(originalPrice) - Number(reductionAmount);
+
+  return newAmount;
 }
 
 function getMiddleCharacter(str) {
