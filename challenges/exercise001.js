@@ -9,6 +9,9 @@ function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
   // Add your code here!
+
+  //console.log(firstName.substring(0,1) + "." + lastName.substring(0,1))
+  return firstName.substring(0,1) + "." + lastName.substring(0,1)
 }
 
 function addVAT(originalPrice, vatRate) {
