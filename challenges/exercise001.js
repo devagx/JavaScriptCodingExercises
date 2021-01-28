@@ -61,13 +61,20 @@ function reverseAllWords(words) {
     outputArray.push(words[i].split('').reverse().join(''));
   }
 
-
   return outputArray;
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
   // Add your code here!
+  var linuxUserCount = 0;
+
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].type.toUpperCase() == "LINUX") {
+      linuxUserCount += 1;
+    }
+  }
+  return linuxUserCount;
 }
 
 function getMeanScore(scores) {
