@@ -18,6 +18,12 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   // Add your code here!
+  var vatSum = ((originalPrice * vatRate) / 100).toFixed(2);
+  var grossSum = Number(vatSum) + Number(originalPrice)
+  
+  //console.log("vatSum = " + vatSum + "|| originalPrice = " + originalPrice + "|| grossSum = " + grossSum)
+
+  return grossSum;
 }
 
 function getSalePrice(originalPrice, reduction) {
