@@ -1,8 +1,8 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
   // Add your code here!
- 
-  return word.substring(0,1).toUpperCase() + word.substring(1,word.length);
+
+  return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
 }
 
 function generateInitials(firstName, lastName) {
@@ -11,7 +11,7 @@ function generateInitials(firstName, lastName) {
   // Add your code here!
 
   //console.log(firstName.substring(0,1) + "." + lastName.substring(0,1))
-  return firstName.substring(0,1) + "." + lastName.substring(0,1)
+  return firstName.substring(0, 1) + "." + lastName.substring(0, 1)
 }
 
 function addVAT(originalPrice, vatRate) {
@@ -20,7 +20,7 @@ function addVAT(originalPrice, vatRate) {
   // Add your code here!
   var vatSum = Number(((originalPrice * vatRate) / 100).toFixed(2));
   var grossSum = Number(vatSum) + Number(originalPrice)
-  
+
   //console.log("vatSum = " + vatSum + "|| originalPrice = " + originalPrice + "|| grossSum = " + grossSum)
 
   return grossSum;
@@ -30,7 +30,7 @@ function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
   // Add your code here!
-  var reductionAmount = (Number(originalPrice) * Number(reduction)/100).toFixed(2);
+  var reductionAmount = (Number(originalPrice) * Number(reduction) / 100).toFixed(2);
 
   //console.log("reductionAmount = " + reductionAmount )
   var newAmount = Number(originalPrice) - Number(reductionAmount);
@@ -55,6 +55,17 @@ function reverseWord(word) {
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Add your code here!
+  var outputArray = new Array();
+
+  for (var i = 0; i < words.length; i++) {
+    outputArray.push(words[i].split('').reverse().join(''));
+  }
+
+  for (var x = 0; x < outputArray.length; x++) {
+    console.log(outputArray[x]);
+  }
+
+  return outputArray;
 }
 
 function countLinuxUsers(users) {
