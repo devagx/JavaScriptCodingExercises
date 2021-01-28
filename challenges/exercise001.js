@@ -61,9 +61,6 @@ function reverseAllWords(words) {
     outputArray.push(words[i].split('').reverse().join(''));
   }
 
-  for (var x = 0; x < outputArray.length; x++) {
-    console.log(outputArray[x]);
-  }
 
   return outputArray;
 }
