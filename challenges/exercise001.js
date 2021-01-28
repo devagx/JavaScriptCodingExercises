@@ -32,7 +32,7 @@ function getSalePrice(originalPrice, reduction) {
   // Add your code here!
   var reductionAmount = (Number(originalPrice) * Number(reduction)/100).toFixed(2);
 
-  console.log("reductionAmount = " + reductionAmount )
+  //console.log("reductionAmount = " + reductionAmount )
   var newAmount = Number(originalPrice) - Number(reductionAmount);
 
   return newAmount;
@@ -41,6 +41,9 @@ function getSalePrice(originalPrice, reduction) {
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
   // Add your code here!
+  const getMiddleCharacter = s => str.substr(str.length - 1 >>> 1, (~str.length & 1) + 1);
+
+  return getMiddleCharacter(str);
 }
 
 function reverseWord(word) {
