@@ -92,22 +92,16 @@ function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
   // Add your code here!
 
-  console.log(1);
-
   if (n % 3 != 0 && n % 5 != 0) {
-    console.log(4);
     return n;
   }
   else if (n % 5 == 0 && n % 3 == 0) {
-    console.log(5);
     return "fizzbuzz";
   }
   else if (n % 3 == 0) {
-    console.log(2);
     return "fizz";
   }
   else if (n % 5 == 0) {
-    console.log(3);
     return "buzz";
   }
 }
