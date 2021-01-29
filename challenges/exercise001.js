@@ -1,13 +1,13 @@
 function capitalize(word) {
-  if (word === undefined) throw new Error("word is required");
+  if (word === undefined || word.length == 0) throw new Error("word is required");
   // Add your code here!
 
   return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
 }
 
 function generateInitials(firstName, lastName) {
-  if (firstName === undefined) throw new Error("firstName is required");
-  if (lastName === undefined) throw new Error("lastName is required");
+  if (firstName === undefined || firstName.length == 0) throw new Error("firstName is required");
+  if (lastName === undefined || lastName.length == 0) throw new Error("lastName is required");
   // Add your code here!
 
   //console.log(firstName.substring(0,1) + "." + lastName.substring(0,1))
@@ -17,6 +17,10 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
+
+  if (typeof(originalPrice) != 'number') throw new Error("originalPrice is not a number");
+  if (typeof(vatRate) != 'number') throw new Error("vatRate is not a number");
+
   // Add your code here!
   var vatSum = Number(((originalPrice * vatRate) / 100).toFixed(2));
   var grossSum = Number(vatSum) + Number(originalPrice)
@@ -29,6 +33,9 @@ function addVAT(originalPrice, vatRate) {
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
+
+  if (typeof(originalPrice) != 'number') throw new Error("originalPrice is not a number");
+  if (typeof(reduction) != 'number') throw new Error("reduction is not a number");
   // Add your code here!
   var reductionAmount = (Number(originalPrice) * Number(reduction) / 100).toFixed(2);
 
@@ -39,15 +46,16 @@ function getSalePrice(originalPrice, reduction) {
 }
 
 function getMiddleCharacter(str) {
-  if (str === undefined) throw new Error("str is required");
+  if (str === undefined || str.length == 0) throw new Error("str is required");
   // Add your code here!
+  var s;
   const getMiddleCharacter = s => str.substr(str.length - 1 >>> 1, (~str.length & 1) + 1);
 
   return getMiddleCharacter(str);
 }
 
 function reverseWord(word) {
-  if (word === undefined) throw new Error("word is required");
+  if (word === undefined || word.length == 0) throw new Error("word is required");
   // Add your code here!
   return word.split('').reverse().join('');
 }
@@ -82,6 +90,7 @@ function getMeanScore(scores) {
   // Add your code here!
   var total = 0;
   for (var i = 0; i < scores.length; i++) {
+    if (typeof(scores[i]) != 'number') throw new Error("item in array is not a number");
     total += Number(scores[i]);
   }
 
@@ -89,7 +98,7 @@ function getMeanScore(scores) {
 }
 
 function simpleFizzBuzz(n) {
-  if (n === undefined) throw new Error("n is required");
+  if (n === undefined || n.length == 0) throw new Error("n is required");
   // Add your code here!
 
   if (n % 3 != 0 && n % 5 != 0) {

@@ -16,19 +16,52 @@ describe("capitalize", () => {
     expect(capitalize("hello")).toBe("Hello");
     expect(capitalize("the quick fox")).toBe("The quick fox");
     expect(capitalize("oh no, bears!!!")).toBe("Oh no, bears!!!");
+    /* I Added below edge test cases earlier on */
     expect(capitalize("Hello everyone")).toBe("Hello everyone");
-    expect(capitalize("")).toBe("");
   });
 
   test("does nothing if the string is already capitalized", () => {
     expect(capitalize("Hello")).toBe("Hello");
   });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => capitalize()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => capitalize(null)).toThrow();
+  });
+
+  test('should throw error if argument  is an empty string', () => {
+    expect(() => capitalize("")).toThrow();
+  });
+
 });
 
 describe("generateInitials", () => {
   test("returns the initials of a firstname and surname", () => {
     expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
   });
+  test("ensure a . character is part of the returned string", () => {
+    expect(generateInitials("Frederic", "Bonneville")).toContain(".");
+  });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => generateInitials()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => generateInitials(null,null)).toThrow();
+  });
+
+  test('should throw error if argument 1 is an empty string', () => {
+    expect(() => generateInitials("","test")).toThrow();
+  });
+
+  test('should throw error if argument 2 is an empty string', () => {
+    expect(() => generateInitials("test","")).toThrow();
+  });
+  
 });
 
 describe("addVAT", () => {
@@ -46,6 +79,24 @@ describe("addVAT", () => {
 
   test("adds a VAT of 0% to a price of 25", () => {
     expect(addVAT(25, 0)).toBe(25);
+  });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => addVAT()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => addVAT(null,null)).toThrow();
+  });
+
+  test('should throw error if string argument supplied', () => {
+    expect(() => addVAT("test1","test2")).toThrow();
+  });
+  test('should throw error if string argument supplied', () => {
+    expect(() => addVAT("test1",0)).toThrow();
+  });
+  test('should throw error if string argument supplied', () => {
+    expect(() => addVAT(1,"test2")).toThrow();
   });
 });
 
@@ -65,6 +116,24 @@ describe("getSalePrice", () => {
   test("reduces a price of 50 by 0%", () => {
     expect(getSalePrice(50, 0)).toBe(50);
   });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => getSalePrice()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => getSalePrice(null,null)).toThrow();
+  });
+
+  test('should throw error if string argument supplied', () => {
+    expect(() => getSalePrice("test1","test2")).toThrow();
+  });
+  test('should throw error if string argument supplied', () => {
+    expect(() => getSalePrice("test1",0)).toThrow();
+  });
+  test('should throw error if string argument supplied', () => {
+    expect(() => getSalePrice(1,"test2")).toThrow();
+  });
 });
 
 describe("getMiddleCharacter", () => {
@@ -74,6 +143,18 @@ describe("getMiddleCharacter", () => {
 
   test("returns the middle 2 characters from a string of even length", () => {
     expect(getMiddleCharacter("help!!")).toBe("lp");
+  });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => getMiddleCharacter()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => getMiddleCharacter(null)).toThrow();
+  });
+
+  test('should throw error if argument  is an empty string', () => {
+    expect(() => getMiddleCharacter("")).toThrow();
   });
 });
 
@@ -87,6 +168,18 @@ describe("reverseWord", () => {
       "?siht od ot tnaw neve uoy dluow yhw"
     );
   });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => reverseWord()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => reverseWord(null)).toThrow();
+  });
+
+  test('should throw error if argument  is an empty string', () => {
+    expect(() => reverseWord("")).toThrow();
+  });
 });
 
 describe("reverseAllWords", () => {
@@ -98,6 +191,22 @@ describe("reverseAllWords", () => {
     expect(
       reverseAllWords(["jest", "mocha", "rspec", "jasmine", "selenium"])
     ).toEqual(["tsej", "ahcom", "cepsr", "enimsaj", "muineles"]);
+  });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => reverseAllWords()).toThrow();
+  });
+
+  test("reverse with empty strings", () => {
+    expect(
+      reverseAllWords(["", "", "", "", ""])
+    ).toEqual(["", "", "", "", ""]);
+  });
+
+  test("reverse with empty array", () => {
+    expect(
+      reverseAllWords([])
+    ).toEqual([]);
   });
 });
 
@@ -124,6 +233,15 @@ describe("countLinuxUsers", () => {
     ];
     expect(countLinuxUsers(users)).toBe(5);
   });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => countLinuxUsers()).toThrow();
+  });
+
+  test("returns the correct number of Linux users found which is 0 because of empty array", () => {
+    const users = [];
+    expect(countLinuxUsers(users)).toBe(0);
+  });
 });
 
 describe("getMeanScore", () => {
@@ -134,6 +252,18 @@ describe("getMeanScore", () => {
 
   test("returns the mean to 2 decimal places", () => {
     expect(getMeanScore([24, 44, 56, 11, 12, 17, 34])).toBe(28.29);
+  });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => getMeanScore()).toThrow();
+  });
+
+  test("returns 0 because of 0 value in array", () => {
+    expect(getMeanScore([0])).toBe(0);
+  });
+
+  test("returns error because item in array is not a number", () => {
+    expect(() => getMeanScore(["test"])).toThrow();
   });
 });
 
@@ -152,5 +282,17 @@ describe("simpleFizzBuzz", () => {
 
   test("returns 'fizzbuzz' if the number is divisible by 3 and 5", () => {
     expect(simpleFizzBuzz(15)).toBe("fizzbuzz");
+  });
+
+  test('should throw error if arguments not supplied', () => {
+    expect(() => simpleFizzBuzz()).toThrow();
+  });
+
+  test('should throw error if null argument supplied', () => {
+    expect(() => simpleFizzBuzz(null)).toThrow();
+  });
+
+  test('should throw error if argument  is an empty string', () => {
+    expect(() => simpleFizzBuzz("")).toThrow();
   });
 });
