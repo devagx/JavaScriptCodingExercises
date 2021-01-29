@@ -45,14 +45,19 @@ function getSalePrice(originalPrice, reduction) {
   return newAmount;
 }
 
+
 function getMiddleCharacter(str) {
   if (str === undefined || str.length == 0) throw new Error("str is required");
   // Add your code here!
-  var s;
-  const getMiddleCharacter = s => str.substr(str.length - 1 >>> 1, (~str.length & 1) + 1);
 
+  /* eslint-disable */
+  //eslint doesnt seem to like the lambda expression so disabling eslint on this function
+  const getMiddleCharacter = s => str.substr(str.length - 1 >>> 1, (~str.length & 1) + 1);
+  /* eslint-enable */
   return getMiddleCharacter(str);
 }
+
+
 
 function reverseWord(word) {
   if (word === undefined || word.length == 0) throw new Error("word is required");
