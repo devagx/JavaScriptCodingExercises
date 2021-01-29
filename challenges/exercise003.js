@@ -16,7 +16,6 @@ function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Your code here!
   for (var i = 0; i < words.length; i++) {
-
     if (i > 0) {
       words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
     }
@@ -28,6 +27,15 @@ function camelCaseWords(words) {
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!
+  var subjectCount = 0;
+
+  for (var i = 0; i < people.length; i++) {
+    for (var s = 0; s < people[i].subjects.length; s++) {
+      subjectCount += 1;
+    }
+
+  }
+  return subjectCount;
 }
 
 function checkIngredients(menu, ingredient) {
