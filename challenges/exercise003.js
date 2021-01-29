@@ -33,7 +33,6 @@ function getTotalSubjects(people) {
     for (var s = 0; s < people[i].subjects.length; s++) {
       subjectCount += 1;
     }
-
   }
   return subjectCount;
 }
@@ -42,6 +41,18 @@ function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
   // Your code here!
+  var ingrediantMatch = false;
+
+  for (var i = 0; i < menu.length; i++) {
+    for (var s = 0; s < menu[i].ingredients.length; s++) {
+      if (menu[i].ingredients[s].toUpperCase() == ingredient.toUpperCase()) {
+        ingrediantMatch = true;
+      }
+    }
+  }
+
+  return ingrediantMatch;
+
 }
 
 function duplicateNumbers(arr1, arr2) {
