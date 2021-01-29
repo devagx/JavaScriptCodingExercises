@@ -13,13 +13,28 @@ function getFillings(sandwich) {
 function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
   // Your code here!
-  if (person.city.toUpperCase() == "MANCHESTER") {return true} 
+  if (person.city.toUpperCase() == "MANCHESTER") { return true }
   else return false;
 }
 
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!
+  var busCapacity = 40;
+  var personPerBus = 0;
+
+  if (people <= busCapacity) {
+    personPerBus = 1;
+  }
+  else {
+    //alert("person = " + person + " | busCapacity=" + busCapacity + " |person / busCapacity = " + (person / busCapacity));
+    personPerBus = parseInt(people / busCapacity);
+    if (people % busCapacity != 0){
+      personPerBus+=1;
+     }
+  }
+  return personPerBus;
+
 }
 
 function countSheep(arr) {
