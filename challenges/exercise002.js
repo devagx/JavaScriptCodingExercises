@@ -29,9 +29,9 @@ function getBusNumbers(people) {
   else {
     //alert("person = " + person + " | busCapacity=" + busCapacity + " |person / busCapacity = " + (person / busCapacity));
     personPerBus = parseInt(people / busCapacity);
-    if (people % busCapacity != 0){
-      personPerBus+=1;
-     }
+    if (people % busCapacity != 0) {
+      personPerBus += 1;
+    }
   }
   return personPerBus;
 
@@ -40,6 +40,14 @@ function getBusNumbers(people) {
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
+
+  var sheepCount = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].toUpperCase() == "SHEEP") {
+      sheepCount += 1;
+    }
+  }
+  return sheepCount;
 }
 
 function hasMPostCode(person) {
