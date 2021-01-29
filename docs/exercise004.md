@@ -64,6 +64,8 @@ const newArr = arr.map(function(item) {
   return item.charAt(0);
 });
 
+// alternative = arr.map(x => x.charAt(0));
+
 // newArr is your new transformed array
 ```
 
@@ -88,6 +90,8 @@ const newArr = arr.filter(function(item) {
     return false;
   }
 });
+
+// alternative = arr.filter(x => x.length > 3);
 
 // newArr is your new filtered array
 ```
