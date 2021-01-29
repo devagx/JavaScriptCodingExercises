@@ -18,8 +18,8 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
 
-  if (typeof(originalPrice) != 'number') throw new Error("originalPrice is not a number");
-  if (typeof(vatRate) != 'number') throw new Error("vatRate is not a number");
+  if (typeof (originalPrice) != 'number') throw new Error("originalPrice is not a number");
+  if (typeof (vatRate) != 'number') throw new Error("vatRate is not a number");
 
   // Add your code here!
   var vatSum = Number(((originalPrice * vatRate) / 100).toFixed(2));
@@ -34,8 +34,8 @@ function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
 
-  if (typeof(originalPrice) != 'number') throw new Error("originalPrice is not a number");
-  if (typeof(reduction) != 'number') throw new Error("reduction is not a number");
+  if (typeof (originalPrice) != 'number') throw new Error("originalPrice is not a number");
+  if (typeof (reduction) != 'number') throw new Error("reduction is not a number");
   // Add your code here!
   var reductionAmount = (Number(originalPrice) * Number(reduction) / 100).toFixed(2);
 
@@ -95,7 +95,7 @@ function getMeanScore(scores) {
   // Add your code here!
   var total = 0;
   for (var i = 0; i < scores.length; i++) {
-    if (typeof(scores[i]) != 'number') throw new Error("item in array is not a number");
+    if (typeof (scores[i]) != 'number') throw new Error("item in array is not a number");
     total += Number(scores[i]);
   }
 
