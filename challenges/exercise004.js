@@ -14,6 +14,7 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
+  return words.filter(x => x.substring(0,3).toUpperCase() == "TO ");
 }
 
 function getIntegers(nums) {
