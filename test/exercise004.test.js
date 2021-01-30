@@ -19,7 +19,7 @@ describe("findSmallNums", () => {
 });
 
 describe("findNamesBeginningWith", () => {
-  test("returns an array of names beginning with the specified character", () => {
+  test.only("returns an array of names beginning with the specified character", () => {
     const names = ["Sally", "Dave", "Susan", "Geoff", "Riley", "Sam"];
     expect(findNamesBeginningWith(names, "S")).toEqual([
       "Sally",
