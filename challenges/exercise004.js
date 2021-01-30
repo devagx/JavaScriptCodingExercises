@@ -14,7 +14,7 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   // Your code here
-  return words.filter(x => x.substring(0,3).toUpperCase() == "TO ");
+  return words.filter(x => x.substring(0, 3).toUpperCase() == "TO ");
 }
 
 function getIntegers(nums) {
@@ -32,6 +32,7 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
+  return nums.map(x => Number(Math.sqrt(x).toFixed(2)));
 }
 
 function findSentencesContaining(sentences, str) {
