@@ -20,6 +20,7 @@ function findVerbs(words) {
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
+  return nums.filter(x => Number.isInteger(x));
 }
 
 function getCities(users) {
