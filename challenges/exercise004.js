@@ -39,6 +39,8 @@ function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
   // Your code here
+  var myReg = new RegExp(str.toUpperCase());
+  return sentences.filter(x => x.toUpperCase().match(myReg));
 }
 
 function getLongestSides(triangles) {
