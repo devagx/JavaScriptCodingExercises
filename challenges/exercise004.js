@@ -69,6 +69,7 @@ function findSentencesContaining(sentences, str) {
 
 const findSentencesContaining = (s,r) => s.filter(x => x.toUpperCase().match(new RegExp(r.toUpperCase())));
 
+/*
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
@@ -78,6 +79,9 @@ function getLongestSides(triangles) {
   });
   return results;
 }
+*/
+
+const getLongestSides = t => t.map(x => Math.max.apply(null, x));
 
 module.exports = {
   findSmallNums,
