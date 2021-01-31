@@ -32,13 +32,14 @@ const count1sand0s = str => {
   if (result[0] === undefined) {
     result[0] = 0;
   }
-  
+
   return result;
 };
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
   // Your code here!
+  return parseInt(n.toString().split('').reverse().join(''));
 };
 
 const sumArrays = arrs => {
