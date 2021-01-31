@@ -31,7 +31,7 @@ const count1sand0s = str => {
 
   }
 
-  if(result[0] === undefined){
+  if (result[0] === undefined) {
     result[0] = 0;
   }
 
