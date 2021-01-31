@@ -6,6 +6,16 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
+  if(!Array.isArray(arr)) throw new Error("an Array is required");
+  var total = 0;
+
+  arr.forEach(n => {
+    if (n % 5 === 0 || n % 3 === 0) {
+      total += n;
+    }
+  });
+
+  return total;
 };
 
 /**
@@ -66,6 +76,9 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  if(staff.length === 0){
+    return false;
+  }
 };
 
 module.exports = {
