@@ -71,6 +71,16 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
+  var searchTermFound = false;
+
+  for (let key in haystack) {
+    if (typeof haystack[key] == 'string') {
+      if (haystack[key].toUpperCase().includes(searchTerm.toUpperCase())) {
+        return true;
+      }
+    }
+  }
+  return searchTermFound;
 };
 
 const getWordFrequencies = str => {
