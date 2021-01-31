@@ -10,6 +10,7 @@ function getSquares(nums) {
 */
 const getSquares = n => n.map(m => m * m);
 
+/*
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Your code here!
@@ -20,6 +21,21 @@ function camelCaseWords(words) {
   }
 
   return words.join('');
+}
+*/
+function camelCaseWords(words) {
+  if (words === undefined) throw new Error("words is required");
+  // Your code here!
+  var camelCaseWords = [];
+  for (var i = 0; i < words.length; i++) {
+    if (i > 0) {
+      camelCaseWords.push(words[i].charAt(0).toUpperCase() + words[i].slice(1));
+    }
+    else{
+      camelCaseWords.push(words[i]);
+    }
+  }
+  return camelCaseWords.join('');
 }
 
 function getTotalSubjects(people) {
