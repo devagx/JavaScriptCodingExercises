@@ -5,7 +5,7 @@ const findNextNumber = (nums, n) => {
 
   var nextNum = nums[nums.findIndex(element => element == n)];
 
-  if (nextNum === undefined || nums[nums.length -1] === n) {
+  if (nextNum === undefined || nums[nums.length - 1] === n) {
     return null;
   }
   else {
@@ -16,6 +16,26 @@ const findNextNumber = (nums, n) => {
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
+
+
+  var result = {};
+
+  for (var i = 0; i < str.length; i++) {
+    var char = str[i];
+    if (result[char] === undefined) {
+      result[char] = 1;
+    }
+    else {
+      result[char] += 1;
+    }
+
+  }
+
+  if(result[0] === undefined){
+    result[0] = 0;
+  }
+
+  return result;
 };
 
 const reverseNumber = n => {
