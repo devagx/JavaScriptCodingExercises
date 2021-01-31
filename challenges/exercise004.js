@@ -45,7 +45,7 @@ function getCities(users) {
 }
 */
 
-const getCities = u => u.map(x => x.data.city.displayName)
+const getCities = u => u.map(x => x.data.city.displayName);
 
 /*
 function getSquareRoots(nums) {
@@ -57,6 +57,7 @@ function getSquareRoots(nums) {
 
 const getSquareRoots = n => n.map(x => Number(Math.sqrt(x).toFixed(2)));
 
+/*
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
@@ -64,6 +65,9 @@ function findSentencesContaining(sentences, str) {
   var myReg = new RegExp(str.toUpperCase());
   return sentences.filter(x => x.toUpperCase().match(myReg));
 }
+*/
+
+const findSentencesContaining = (s,r) => s.filter(x => x.toUpperCase().match(new RegExp(r.toUpperCase())));
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
