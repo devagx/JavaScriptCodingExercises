@@ -1,16 +1,14 @@
+/*
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   // Your code here!
-  if (nums.length == 0) {
-    return new Array();
-  }
-  else {
-    for (var i = 0; i < nums.length; i++) {
-      nums[i] = nums[i] * nums[i];
-    }
-  }
-  return nums;
+  const squaredNums = nums.map(function (num) {
+    return num * num;
+  });
+  return squaredNums;
 }
+*/
+const getSquares = n => n.map(m => m * m);
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
