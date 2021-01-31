@@ -57,6 +57,14 @@ const sumArrays = arrs => {
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
+  if (arr.length > 0) {
+    [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+  }
+  else {
+    return [];
+  }
+
+  return arr;
 };
 
 const findNeedle = (haystack, searchTerm) => {
