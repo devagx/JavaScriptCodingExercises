@@ -1,8 +1,11 @@
+/*
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
   return nums.filter(x => x < 1);
 }
+*/
+const findSmallNums = n => n.filter(x => x < 1);
 
 /*
 function findNamesBeginningWith(names, char) {
