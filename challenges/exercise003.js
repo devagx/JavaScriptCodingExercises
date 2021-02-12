@@ -22,8 +22,8 @@ function getTotalSubjects(people) {
 
   let subjectCount = 0;
 
-  for (var i = 0; i < people.length; i++) {
-    for (var s = 0; s < people[i].subjects.length; s++) {
+  for (let i = 0; i < people.length; i++) {
+    for (let s = 0; s < people[i].subjects.length; s++) {
       subjectCount += 1;
     }
   }
