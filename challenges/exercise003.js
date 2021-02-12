@@ -51,7 +51,7 @@ function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
 
-  return Array.from(new Set(arr1.filter(index => arr2.indexOf(index) >= 0))).sort()
+  return Array.from(new Set(arr1.filter(num => arr2.indexOf(num) >= 0))).sort()
 }
 
 module.exports = {
