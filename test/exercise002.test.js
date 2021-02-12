@@ -33,7 +33,6 @@ describe("isFromManchester", () => {
     };
     expect(isFromManchester(person)).toBe(true);
   });
-
   test("returns false if the person is not Manchester", () => {
     const person = {
       name: "Anisa",
@@ -53,21 +52,18 @@ describe("getBusNumbers", () => {
     expect(getBusNumbers(39)).toBe(1);
     expect(getBusNumbers(40)).toBe(1);
   });
-
   test("returns 2 if 2 buses are required", () => {
     expect(getBusNumbers(41)).toBe(2);
     expect(getBusNumbers(50)).toBe(2);
     expect(getBusNumbers(55)).toBe(2);
     expect(getBusNumbers(80)).toBe(2);
   });
-
   test("returns 3 if 3 buses are required", () => {
     expect(getBusNumbers(81)).toBe(3);
     expect(getBusNumbers(85)).toBe(3);
     expect(getBusNumbers(100)).toBe(3);
     expect(getBusNumbers(120)).toBe(3);
   });
-
   test("returns the correct number of buses for larger numbers of people", () => {
     expect(getBusNumbers(43728)).toBe(1094);
   });
@@ -78,17 +74,14 @@ describe("countSheep", () => {
     const arr = ["dog", "badger", "dog", "dog", "chicken"];
     expect(countSheep(arr)).toBe(0);
   });
-
   test("returns 1 if there is 1 sheep in the array", () => {
     const arr = ["dog", "sheep", "dog", "dog", "chicken"];
     expect(countSheep(arr)).toBe(1);
   });
-
   test("returns 2 if there are 2 sheep in the array", () => {
     const arr = ["dog", "sheep", "dog", "sheep", "chicken"];
     expect(countSheep(arr)).toBe(2);
   });
-
   test("returns 5 if there are 5 sheep in the array", () => {
     const arr = [
       "dog",
@@ -118,7 +111,6 @@ describe("hasMPostCode", () => {
     };
     expect(hasMPostCode(person)).toBe(true);
   });
-
   test("returns false if the person does not have a postcode starting with M", () => {
     const person = {
       name: "Anisa",
@@ -131,7 +123,6 @@ describe("hasMPostCode", () => {
     };
     expect(hasMPostCode(person)).toBe(false);
   });
-
   test("returns false if the postcode starts with M but is not for Manchester", () => {
     const person = {
       name: "Jahin",

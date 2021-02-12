@@ -1,3 +1,6 @@
+/* eslint-disable */
+
+
 /**
  * This function will receive an array of numbers and should return the sum
  * of any numbers which are a multiple of 3 or 5
@@ -6,8 +9,8 @@
  */
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  if(!Array.isArray(arr)) throw new Error("an Array is required");
-  var total = 0;
+  if (!Array.isArray(arr)) throw new Error("an Array is required");
+  let total = 0;
 
   arr.forEach(n => {
     if (n % 5 === 0 || n % 3 === 0) {
@@ -76,7 +79,7 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-  if(staff.length === 0){
+  if (staff.length === 0) {
     return false;
   }
 };
@@ -89,3 +92,5 @@ module.exports = {
   createMatrix,
   areWeCovered
 };
+
+/* eslint-enable */

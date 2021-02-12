@@ -44,7 +44,6 @@ describe("findVerbs", () => {
     expect(findVerbs(words)).toEqual(["to eat", "to sneak", "to squeak"]);
     expect(findVerbs(["bottle", "fish", "grain"])).toEqual([]);
   });
-
   test("does not mistake words that include 'to' elsewhere", () => {
     const words = [
       "to eat",
@@ -131,7 +130,6 @@ describe("findSentencesContaining", () => {
     "Put keywords in it. It's an array of strings. This helps people discover your package as it's listed in npm search",
     "The bugs field should hold the url to your project’s issue tracker and / or the email address to which issues should be reported."
   ];
-
   test("returns only the sentences containing the specified string", () => {
     expect(
       findSentencesContaining(sentencesAboutPackageJson, "license")
@@ -143,7 +141,6 @@ describe("findSentencesContaining", () => {
       findSentencesContaining(sentencesAboutPackageJson, "binary")
     ).toEqual([]);
   });
-
   test("it should not be case sensitive", () => {
     expect(
       findSentencesContaining(sentencesAboutPackageJson, "dependencies")

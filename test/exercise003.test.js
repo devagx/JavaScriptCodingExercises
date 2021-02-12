@@ -10,11 +10,9 @@ describe("camelCaseWords", () => {
   test("camel cases a single word (i.e. no capital letter at beginning)", () => {
     expect(camelCaseWords(["my"])).toBe("my");
   });
-
   test("camel cases two words (i.e. second word is capitalized)", () => {
     expect(camelCaseWords(["my", "variable"])).toBe("myVariable");
   });
-
   test("camel cases two+ words (i.e. all words after 1st are capitalized)", () => {
     expect(camelCaseWords(["my", "variable"])).toBe("myVariable");
     expect(camelCaseWords(["my", "variable", "name"])).toBe("myVariableName");
@@ -29,7 +27,6 @@ describe("getSquares", () => {
   test("returns an empty array if empty array passed", () => {
     expect(getSquares([])).toEqual([]);
   });
-
   test("returns an array of squares of the original numbers", () => {
     expect(getSquares([2, 4, 6])).toEqual([4, 16, 36]);
     expect(getSquares([2, 4, 6, 1])).toEqual([4, 16, 36, 1]);
@@ -53,7 +50,6 @@ describe("getTotalSubjects", () => {
     ];
     expect(getTotalSubjects(people)).toBe(0);
   });
-
   test("returns 1 if 1 person has a subject", () => {
     const people = [
       { name: "Billy", subjects: [] },
@@ -62,7 +58,6 @@ describe("getTotalSubjects", () => {
     ];
     expect(getTotalSubjects(people)).toBe(1);
   });
-
   test("returns the correct number of subjects studied in total for all people", () => {
     const people = [
       { name: "Billy", subjects: ["welsh", "spanish"] },
@@ -99,7 +94,6 @@ describe("checkIngredients", () => {
         ingredients: ["chickpeas", "tahini", "lemon", "garlic", "salt"]
       }
     ];
-
     expect(checkIngredients(menu, "milk")).toBe(false);
   });
 
@@ -128,7 +122,6 @@ describe("checkIngredients", () => {
         ingredients: ["chickpeas", "tahini", "lemon", "garlic", "salt"]
       }
     ];
-
     expect(checkIngredients(menu, "dark chocolate")).toBe(true);
   });
 });
@@ -143,7 +136,6 @@ describe("duplicateNumbers", () => {
     arr2 = [1];
     expect(duplicateNumbers(arr1, arr2)).toEqual([1]);
   });
-
   test("returns the duplicate numbers in ascending order", () => {
     let arr1 = [1, 55, 4, 3, 7, 8];
     let arr2 = [55, 23, 65, 0, 1];
@@ -153,7 +145,6 @@ describe("duplicateNumbers", () => {
     arr2 = [4, 1, 7, 3, 2];
     expect(duplicateNumbers(arr1, arr2)).toEqual([1, 2, 3, 7]);
   });
-
   test("returns each number only once, even if it appears in one array multiple times", () => {
     let arr1 = [1, 2, 2, 2, 3, 4, 5];
     let arr2 = [1, 2, 6, 7];
