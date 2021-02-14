@@ -1,4 +1,4 @@
-# YrttJavaScriptCodingExercises
+# yrtt-javascript-coding-exercises
 
 This repository contains challenges for you to undertake and build on your coding and technical ability. We will be checking over your solutions, so please ensure you push to GitHub regularly. 
 
