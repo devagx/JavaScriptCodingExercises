@@ -38,7 +38,9 @@ function getSalePrice(originalPrice, reduction) {
 function getMiddleCharacter(str) {
     if (str === undefined || str.length == 0) throw new Error("str is required");
 
-    return str.substr(str.length - 1 >>> 1, (~str.length & 1) + 1);
+    //Math.Ceil to round up to nearest whole number on strings of odd length and then subtract one because array position starting 0
+    //Modular 2 used to identify if to return 1 character or 2 characters in result. If even Then return 2 chars Else 1 char
+    return str.substr(Math.ceil(str.length / 2 - 1), str.length % 2 === 0 ? 2 : 1);
 }
 
 function reverseWord(word) {
