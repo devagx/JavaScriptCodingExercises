@@ -1,26 +1,26 @@
-const findSmallNums = n => n.filter(x => x < 1);
+const findSmallNums = numArr => numArr.filter(num => num < 1);
 
-const findNamesBeginningWith = (n, c) => n.filter(x => x.charAt(0).toUpperCase() === c);
+const findNamesBeginningWith = (nameArr, char) => nameArr.filter(name => name.charAt(0).toUpperCase() === char);
 
-const findVerbs = w => w.filter(x => x.substring(0, 3).toUpperCase() == "TO ");
+const findVerbs = wordsArr => wordsArr.filter(word => word.substring(0, 3).toUpperCase() == "TO ");
 
-const getIntegers = n => n.filter(x => Number.isInteger(x));
+const getIntegers = numArr => numArr.filter(num => Number.isInteger(num));
 
-const getCities = u => u.map(x => x.data.city.displayName);
+const getCities = userArr => userArr.map(user => user.data.city.displayName);
 
-const getSquareRoots = n => n.map(x => Number(Math.sqrt(x).toFixed(2)));
+const getSquareRoots = numArr => numArr.map(num => Number(Math.sqrt(num).toFixed(2)));
 
-const findSentencesContaining = (s, r) => s.filter(x => x.toUpperCase().match(new RegExp(r.toUpperCase())));
+const findSentencesContaining = (sentences, word) => sentences.filter(sentence => sentence.toUpperCase().match(new RegExp(word.toUpperCase())));
 
-const getLongestSides = t => t.map(x => Math.max.apply(null, x));
+const getLongestSides = numMdArr => numMdArr.map(item => Math.max.apply(null, item));
 
 module.exports = {
-  findSmallNums,
-  findNamesBeginningWith,
-  findVerbs,
-  getIntegers,
-  getCities,
-  getSquareRoots,
-  findSentencesContaining,
-  getLongestSides
+    findSmallNums,
+    findNamesBeginningWith,
+    findVerbs,
+    getIntegers,
+    getCities,
+    getSquareRoots,
+    findSentencesContaining,
+    getLongestSides
 };
