@@ -65,7 +65,7 @@ describe("getBusNumbers", () => {
     expect(getBusNumbers(120)).toBe(3);
   });
   test("returns the correct number of buses for larger numbers of people", () => {
-    expect(getBusNumbers(43728)).toBe(1094);
+    expect(getBusNumbers("43728")).toBe(1094);
   });
 });
 
