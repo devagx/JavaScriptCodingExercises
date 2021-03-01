@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const {
   sumMultiples,
   isValidDNA,
@@ -33,22 +31,61 @@ describe("sumMultiples", () => {
     expect(sumMultiples([1, 2, 8, 13, 7])).toBe(0);
   });
 });
-describe("isValidDNA", () => {
-  test("Test description here....", () => {
-
+describe("isValidDNA Input Tests", () => {
+  test('should throw error if arguments not supplied', () => {
+    expect(() => isValidDNA()).toThrow();
+  });
+  test('should throw error if null argument supplied', () => {
+    expect(() => isValidDNA(null)).toThrow();
+  });
+  test('should throw error if argument  is an empty string', () => {
+    expect(() => isValidDNA("")).toThrow();
+  });
+  test("Throws an error as new Array is passed instead of string", () => {
+    expect(() => {
+      isValidDNA(new Array());
+    }).toThrow();
+  });
+  test("Throws an error as number is passed instead of string", () => {
+    expect(() => {
+      isValidDNA(1);
+    }).toThrow();
   });
 });
+describe("isValidDNA Output Tests", () => {
+  test("return true as result contains valid characters only. Valid characters are CTGA in uppercase.", () => {
+    expect(isValidDNA("CTGA")).toBe(true);
+  });
+  test("return true as result contains valid characters only. Valid characters are CTGA in uppercase.", () => {
+    expect(isValidDNA("GCTA")).toBe(true);
+  });
+  test("return true as result contains valid characters only. Valid characters are CTGA in uppercase.", () => {
+    expect(isValidDNA("GACT")).toBe(true);
+  });
+  test("return true as result contains valid characters only. Valid characters are CTGA in uppercase.", () => {
+    expect(isValidDNA("AAAA")).toBe(true);
+  });
+  test("return false as result contains invalid characters. Valid characters are CTGA in uppercase.", () => {
+    expect(isValidDNA("GXCT")).toBe(false);
+  });
+  test("return false as result contains invalid characters. Valid characters are CTGA in uppercase.", () => {
+    expect(isValidDNA("GcTA")).toBe(false);
+  });
+});
+
 describe("getComplementaryDNA", () => {
   test("Test description here....", () => {
 
   });
 });
+
 describe("isItPrime", () => {
   test("Test description here....", () => {
 
   });
 });
-describe.only("createMatrix", () => {
+
+describe("createMatrix", () => {
   it("it returns a matrix of 1 X 1 when passed 1", () => {
     const result = createMatrix(1);
     const expected = [["foo"]];
@@ -56,6 +93,7 @@ describe.only("createMatrix", () => {
   });
 
 });
+
 describe("areWeCovered", () => {
   test("it returns false if there are no staff at all", () => {
     expect(areWeCovered([], "Sunday")).toBe(false);
@@ -75,8 +113,4 @@ describe("areWeCovered", () => {
     ];
     expect(areWeCovered(staff, "Wednesday")).toBe(false);
   });
-
 });
-
-
-/* eslint-enable */

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 
 /**
  * This function will receive an array of numbers and should return the sum
@@ -27,7 +25,16 @@ const sumMultiples = arr => {
  * @returns {Boolean}
  */
 const isValidDNA = str => {
-  if (str === undefined) throw new Error("str is required");
+  if (str === undefined || str.length == 0 || typeof (str) != 'string') throw new Error("str is required");
+  let validChars = ["C", "T", "G", "A"]
+  let charInputArray = [...str]
+
+  for (let i = 0; i < charInputArray.length; i++) {
+    if (!validChars.includes(charInputArray[i])) {
+      return false;
+    }
+  }
+  return true;
 };
 
 /**
@@ -93,4 +100,4 @@ module.exports = {
   areWeCovered
 };
 
-/* eslint-enable */
+
