@@ -15,7 +15,6 @@ const sumMultiples = arr => {
       total += n;
     }
   });
-
   return total;
 };
 

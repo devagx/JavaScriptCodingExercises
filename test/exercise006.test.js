@@ -73,9 +73,26 @@ describe("isValidDNA Output Tests", () => {
   });
 });
 
-describe("getComplementaryDNA", () => {
-  test("Test description here....", () => {
 
+describe("getComplementaryDNA Input Tests", () => {
+  test('should throw error if arguments not supplied', () => {
+    expect(() => getComplementaryDNA()).toThrow();
+  });
+  test('should throw error if null argument supplied', () => {
+    expect(() => getComplementaryDNA(null)).toThrow();
+  });
+  test('should throw error if argument  is an empty string', () => {
+    expect(() => getComplementaryDNA("")).toThrow();
+  });
+  test("Throws an error as new Array is passed instead of string", () => {
+    expect(() => {
+      getComplementaryDNA(new Array());
+    }).toThrow();
+  });
+  test("Throws an error as number is passed instead of string", () => {
+    expect(() => {
+      getComplementaryDNA(1);
+    }).toThrow();
   });
 });
 
